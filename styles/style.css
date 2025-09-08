@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  min-height: 100vh;
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: var(--white);
+  background-color: var(--grey-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+main .container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 
+  "section1 section1 section2 section5"
+  "section3 section4 section4 section5";
+  gap: 1.75rem;
+}
+
+main .container > div {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 1.5rem 3.5rem 30px 0 var(--grey-200);
+}
+
+main .container > div .personal-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+main .container > div .personal-info div {
+  margin: auto 0;
+}
+
+main .container > div .personal-info div .name {
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: .2rem;
+  color: var(--grey-100);
+}
+
+main .container > div .personal-info div .position {
+  font-size: .70rem;
+  font-weight: 500;
+  color: var(--grey-100);
+}
+
+main .container > div img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+main .container > div .main-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+main .container > div .secondary-message {
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+main .container .section1 {
+  grid-area: section1;
+  background-color: var(--purple-500);
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 18%;
+}
+
+main .container .section1 .personal-info img {
+  border: 2px solid hsl(214, 17%, 92%, 50%);
+}
+
+main .container .section1 .main-message {
+  color: var(--grey-100);
+}
+
+main .container .section1 .secondary-message {
+  color: var(--grey-200);
+}
+
+main .container .section2 {
+  grid-area: section2;
+  background-color: var(--grey-500);
+}
+
+main .container .section2 .secondary-message {
+  color: var(--grey-100);
+}
+
+main .container .section3 {
+  grid-area: section3;
+  color: var(--grey-500);
+  background-color: var(--white);
+}
+
+main .container .section3 .personal-info div .name {
+  color: var(--grey-500);
+}
+
+main .container .section3 .personal-info div .position{
+  color: var(--grey-400);
+}
+
+main .container .section3 .secondary-message {
+  color: var(--grey-500);
+}
+
+main .container .section4 {
+  grid-area: section4;
+  background-color: var(--dark-blue);
+}
+
+main .container .section4 .personal-info img {
+  border: 2px solid var(--purple-500);
+}
+
+main .container .section4 .main-message {
+  color: var(--grey-200);
+}
+
+main .container .section4 .secondary-message {
+  color: var(--grey-200);
+}
+
+main .container .section5 {
+  grid-area: section5;
+  color: var(--grey-500);
+  background-color: var(--white);
+}
+
+main .container .section5 .personal-info div .name {
+  color: var(--grey-500);
+}
+
+main .container .section5 .personal-info div .position{
+  color: var(--grey-400);
+}
+
+main .container .section5 .secondary-message {
+  color: var(--grey-500);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--grey-500);
+}
+
+.attribution a {
+  text-decoration: none;
+  background-color: var(--grey-500);
+  color: var(--white);
+  padding: .75rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--grey-500);
+}
+
+.attribution a:hover {
+  background-color: transparent;
+  color: var(--grey-500);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 2rem 0;
+  }
+  
+  main .container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "section1"
+    "section2"
+    "section3"
+    "section4"
+    "section5";
+  }
+  
+  main .container .section1 {
+    background-image: none;
+  }
+}
